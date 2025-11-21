@@ -163,7 +163,14 @@ public partial class MainForm : Form
         Color color = e.Severity == XmlSeverityType.Error ? Color.Red : Color.Orange;
         string severity = e.Severity == XmlSeverityType.Error ? "ERROR" : "WARNING";
         
-        LogMessage($"[{severity}] Line {e.Exception.LineNumber}, Position {e.Exception.LinePosition}:", color);
+        if (e.Exception != null)
+        {
+            LogMessage($"[{severity}] Line {e.Exception.LineNumber}, Position {e.Exception.LinePosition}:", color);
+        }
+        else
+        {
+            LogMessage($"[{severity}]:", color);
+        }
         LogMessage($"  {e.Message}", color);
     }
 

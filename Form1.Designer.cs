@@ -58,7 +58,7 @@ partial class MainForm
         menuStrip.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem });
         menuStrip.Location = new Point(0, 0);
         menuStrip.Name = "menuStrip";
-        menuStrip.Size = new Size(1000, 24);
+        menuStrip.Size = new Size(839, 24);
         menuStrip.TabIndex = 0;
         menuStrip.Text = "menuStrip";
         // 
@@ -72,14 +72,14 @@ partial class MainForm
         // loadXmlToolStripMenuItem
         // 
         loadXmlToolStripMenuItem.Name = "loadXmlToolStripMenuItem";
-        loadXmlToolStripMenuItem.Size = new Size(150, 22);
+        loadXmlToolStripMenuItem.Size = new Size(141, 22);
         loadXmlToolStripMenuItem.Text = "Load Xml";
         loadXmlToolStripMenuItem.Click += LoadXmlToolStripMenuItem_Click;
         // 
         // addListXSDToolStripMenuItem
         // 
         addListXSDToolStripMenuItem.Name = "addListXSDToolStripMenuItem";
-        addListXSDToolStripMenuItem.Size = new Size(150, 22);
+        addListXSDToolStripMenuItem.Size = new Size(141, 22);
         addListXSDToolStripMenuItem.Text = "Add List XSD";
         addListXSDToolStripMenuItem.Click += AddListXSDToolStripMenuItem_Click;
         // 
@@ -97,8 +97,8 @@ partial class MainForm
         // splitContainer.Panel2
         // 
         splitContainer.Panel2.Controls.Add(groupBoxLog);
-        splitContainer.Size = new Size(1000, 546);
-        splitContainer.SplitterDistance = 200;
+        splitContainer.Size = new Size(839, 414);
+        splitContainer.SplitterDistance = 151;
         splitContainer.TabIndex = 1;
         // 
         // groupBoxXSD
@@ -108,7 +108,7 @@ partial class MainForm
         groupBoxXSD.Dock = DockStyle.Fill;
         groupBoxXSD.Location = new Point(0, 0);
         groupBoxXSD.Name = "groupBoxXSD";
-        groupBoxXSD.Size = new Size(1000, 200);
+        groupBoxXSD.Size = new Size(839, 151);
         groupBoxXSD.TabIndex = 0;
         groupBoxXSD.TabStop = false;
         groupBoxXSD.Text = "XSD Files";
@@ -117,19 +117,18 @@ partial class MainForm
         // 
         listBoxXSD.Dock = DockStyle.Fill;
         listBoxXSD.FormattingEnabled = true;
-        listBoxXSD.ItemHeight = 15;
         listBoxXSD.Location = new Point(3, 19);
         listBoxXSD.Name = "listBoxXSD";
-        listBoxXSD.Size = new Size(924, 178);
+        listBoxXSD.Size = new Size(763, 129);
         listBoxXSD.TabIndex = 0;
         // 
         // panelXSDButtons
         // 
         panelXSDButtons.Controls.Add(buttonRemoveXSD);
         panelXSDButtons.Dock = DockStyle.Right;
-        panelXSDButtons.Location = new Point(927, 19);
+        panelXSDButtons.Location = new Point(766, 19);
         panelXSDButtons.Name = "panelXSDButtons";
-        panelXSDButtons.Size = new Size(70, 178);
+        panelXSDButtons.Size = new Size(70, 129);
         panelXSDButtons.TabIndex = 1;
         // 
         // buttonRemoveXSD
@@ -148,7 +147,7 @@ partial class MainForm
         groupBoxLog.Dock = DockStyle.Fill;
         groupBoxLog.Location = new Point(0, 0);
         groupBoxLog.Name = "groupBoxLog";
-        groupBoxLog.Size = new Size(1000, 342);
+        groupBoxLog.Size = new Size(839, 259);
         groupBoxLog.TabIndex = 0;
         groupBoxLog.TabStop = false;
         groupBoxLog.Text = "Validation Log";
@@ -159,7 +158,7 @@ partial class MainForm
         richTextBoxLog.Location = new Point(3, 19);
         richTextBoxLog.Name = "richTextBoxLog";
         richTextBoxLog.ReadOnly = true;
-        richTextBoxLog.Size = new Size(994, 320);
+        richTextBoxLog.Size = new Size(833, 237);
         richTextBoxLog.TabIndex = 0;
         richTextBoxLog.Text = "";
         // 
@@ -168,16 +167,16 @@ partial class MainForm
         panelBottom.Controls.Add(buttonCheckXml);
         panelBottom.Controls.Add(labelXmlFile);
         panelBottom.Dock = DockStyle.Bottom;
-        panelBottom.Location = new Point(0, 570);
+        panelBottom.Location = new Point(0, 438);
         panelBottom.Name = "panelBottom";
-        panelBottom.Size = new Size(1000, 50);
+        panelBottom.Size = new Size(839, 50);
         panelBottom.TabIndex = 2;
         // 
         // buttonCheckXml
         // 
         buttonCheckXml.Anchor = AnchorStyles.Top | AnchorStyles.Right;
         buttonCheckXml.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-        buttonCheckXml.Location = new Point(870, 10);
+        buttonCheckXml.Location = new Point(709, 10);
         buttonCheckXml.Name = "buttonCheckXml";
         buttonCheckXml.Size = new Size(120, 30);
         buttonCheckXml.TabIndex = 1;
@@ -190,7 +189,7 @@ partial class MainForm
         labelXmlFile.AutoSize = true;
         labelXmlFile.Location = new Point(12, 17);
         labelXmlFile.Name = "labelXmlFile";
-        labelXmlFile.Size = new Size(100, 15);
+        labelXmlFile.Size = new Size(108, 15);
         labelXmlFile.TabIndex = 0;
         labelXmlFile.Text = "No XML file loaded";
         // 
@@ -198,7 +197,7 @@ partial class MainForm
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(1000, 620);
+        ClientSize = new Size(839, 488);
         Controls.Add(splitContainer);
         Controls.Add(panelBottom);
         Controls.Add(menuStrip);

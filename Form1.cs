@@ -103,14 +103,14 @@ public partial class MainForm : Form
             {
                 LogMessage(new string('-', 80), Color.Gray);
                 LogMessage($"✗ Validation failed with {validationErrors.Count} error(s).", Color.Red);
-                MessageBox.Show($"XML validation failed with {validationErrors.Count} error(s). See log for details.", "Validation Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // No MessageBox here: errors are shown only in the log
             }
         }
         catch (Exception ex)
         {
             LogMessage(new string('-', 80), Color.Gray);
             LogMessage($"Exception: {ex.Message}", Color.Red);
-            MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 
@@ -120,16 +120,20 @@ public partial class MainForm : Form
         {
             ValidationType = ValidationType.Schema,
             ValidationFlags = XmlSchemaValidationFlags.ProcessInlineSchema |
-                            XmlSchemaValidationFlags.ProcessSchemaLocation |
-                            XmlSchemaValidationFlags.ReportValidationWarnings
+                          XmlSchemaValidationFlags.ProcessSchemaLocation |
+                          XmlSchemaValidationFlags.ReportValidationWarnings
         };
 
-        // Add all XSD schemas
+        settings.XmlResolver = new XmlUrlResolver();
+        settings.ValidationEventHandler += ValidationEventHandler;
+
         foreach (string xsdPath in xsdFilePaths)
         {
             try
             {
-                settings.Schemas.Add(null, xsdPath);
+                using var xr = XmlReader.Create(xsdPath);
+                var schema = XmlSchema.Read(xr, ValidationEventHandler);
+                settings.Schemas.Add(schema);
                 LogMessage($"Loaded schema: {Path.GetFileName(xsdPath)}", Color.Green);
             }
             catch (Exception ex)
@@ -137,6 +141,7 @@ public partial class MainForm : Form
                 LogMessage($"Error loading schema {Path.GetFileName(xsdPath)}: {ex.Message}", Color.Red);
             }
         }
+        settings.Schemas.Compile();
 
         // Set up validation event handler
         settings.ValidationEventHandler += ValidationEventHandler;

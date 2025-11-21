@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<person id="abc">
+  <name>Jane Doe</name>
+  <age>-5</age>
+  <email>jane.doe@example.com</email>
+  <extra>This field is not in schema</extra>
+</person>

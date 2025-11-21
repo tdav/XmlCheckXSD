@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addr:address xmlns:addr="http://example.com/address">
+  <street>123 Main St</street>
+  <city>New York</city>
+  <zipcode>10001</zipcode>
+  <country>USA</country>
+</addr:address>
